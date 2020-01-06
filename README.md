@@ -58,6 +58,8 @@ FLUSH PRIVILEGES
 
 ![创建表](./setup-img/Snipaste_2020-01-06_14-02-35.png)
 
+![创建表](./setup-img/Snipaste_2020-01-06_13-51-58.png)
+
 你可以创建其他的数据库和表。
 
 #### 4. 安装依赖
