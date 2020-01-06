@@ -32,8 +32,8 @@ ctrl + alt + s 打开 WebStorm 的设置面板，在 Plugins 里面搜索 Market
 
 打开mysql窗口，执行如下命令：
 
-```js
 // 密码改成你的数据库密码
+```js
 ALTER USER 'root'@'localhost'IDENTIFIED WITH mysql_native_password BY '密码'
 ```
 //重启
@@ -46,19 +46,47 @@ FLUSH PRIVILEGES
 
 这里使用刚才装好的插件进行可视化操作，比较简单。比如我创建了一个 node 数据库，然后添加了一张用户信息表 users。
 
+创建数据库
+![创建数据库](./setup-img/Snipaste_2020-01-06_14-00-59.png)
+![创建数据库](./setup-img/Snipaste_2020-01-06_14-01-08.png)
+
+创建表
+![创建表](./setup-img/Snipaste_2020-01-06_14-01-27.png)
+![创建表](./setup-img/Snipaste_2020-01-06_14-02-35.png)
 
 你可以创建其他的数据库和表。
 
 #### 4. 安装依赖
 
-npm install 
-
+```js
+npm install
+```
 
 #### 5. 检查代码中数据库连接配置
 
 检查文件DAO/db.js ，保证数据库信息与你创建的数据库信息是一致的。
 
+![数据库配置](./setup-img/Snipaste_2020-01-06_14-05-08.png)
+
 
 #### 6. 启动
-
+控制台执行命令
+```js
 npm run start
+```
+或者点击一下左下角的npm控制台的命令：
+![启动](./setup-img/Snipaste_2020-01-06_14-06-15.png)
+
+#### 6. 最终效果
+
+![登录](./setup-img/Snipaste_2020-01-06_14-49-58.png)
+
+![注册](./setup-img/Snipaste_2020-01-06_14-48-30.png)
+
+![找回密码](./setup-img/Snipaste_2020-01-06_14-48-38.png)
+
+![聊天](./setup-img/Snipaste_2020-01-06_14-49-15.png)
+
+![修改密码](./setup-img/Snipaste_2020-01-06_14-49-05.png)
+
+
