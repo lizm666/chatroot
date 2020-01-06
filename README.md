@@ -47,11 +47,15 @@ FLUSH PRIVILEGES
 这里使用刚才装好的插件进行可视化操作，比较简单。比如我创建了一个 node 数据库，然后添加了一张用户信息表 users。
 
 创建数据库
+
 ![创建数据库](./setup-img/Snipaste_2020-01-06_14-00-59.png)
+
 ![创建数据库](./setup-img/Snipaste_2020-01-06_14-01-08.png)
 
 创建表
+
 ![创建表](./setup-img/Snipaste_2020-01-06_14-01-27.png)
+
 ![创建表](./setup-img/Snipaste_2020-01-06_14-02-35.png)
 
 你可以创建其他的数据库和表。
@@ -75,17 +79,14 @@ npm install
 npm run start
 ```
 或者点击一下左下角的npm控制台的命令：
+
 ![启动](./setup-img/Snipaste_2020-01-06_14-06-15.png)
 
 #### 6. 最终效果
 
-![登录](./setup-img/Snipaste_2020-01-06_14-49-58.png)
+![登录](./setup-img/Snipaste_2020-01-06_14-49-58.png)![注册](./setup-img/Snipaste_2020-01-06_14-48-30.png)
 
-![注册](./setup-img/Snipaste_2020-01-06_14-48-30.png)
-
-![找回密码](./setup-img/Snipaste_2020-01-06_14-48-38.png)
-
-![聊天](./setup-img/Snipaste_2020-01-06_14-49-15.png)
+![找回密码](./setup-img/Snipaste_2020-01-06_14-48-38.png)![聊天](./setup-img/Snipaste_2020-01-06_14-49-15.png)
 
 ![修改密码](./setup-img/Snipaste_2020-01-06_14-49-05.png)
 
