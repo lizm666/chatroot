@@ -12,6 +12,34 @@ Node.js 聊天室，技术栈为 Node.js + express + socket.io + pug + mysql，�
 
 ctrl + alt + s 打开 WebStorm 的设置面板，在 Plugins 里面搜索 Marketplace，输入关键字 DB，然后安装第二个官方的操作数据库的插件，安装好后需要重启WebStorm。
 
+![安装插件](./setup-img/Snipaste_2020-01-06_13-55-13.png)
+
+安装好之后，会在WebStorm右侧出现一个DataBase插件（里面的node数据库是我新加的，刚安装是没有的）
+
+![DataBase插件](./setup-img/Snipaste_2020-01-06_13-56-07.png)
+
+配置一下目标数据库
+
+![配置数据库](./setup-img/Snipaste_2020-01-06_14-18-00.png)
+
+设置数据库时区
+
+![设置时区](./setup-img/Snipaste_2020-01-06_14-20-04.png)
+
+更新认证方式为密码认证
+
+如果遇到了 `Client does not support authentication protocol requested by server; consider upgrad`这个错误，需要更改一下数据库加密方式。
+
+打开mysql窗口，执行如下命令：
+
+```js
+// 密码改成你的数据库密码
+ALTER USER 'root'@'localhost'IDENTIFIED WITH mysql_native_password BY '密码'
+```
+//重启
+```js
+FLUSH PRIVILEGES
+```
 
 
 #### 3. 创建数据库和表
