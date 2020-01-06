@@ -1,0 +1,47 @@
+extends layout
+
+block content
+    link(rel='stylesheet', href='/stylesheets/chatroom.css')
+    //.home-content
+    //    .msg 欢迎！
+    //        span#username #{username}
+    //        input(type='hidden' id='sex' value=sex)
+    //        a.mgr-40.mgl-40(href='/users/logout.do') 退出
+    //        a(href='/users/delete.do') 注销账号
+    //    .user-info-box
+    //        .row 用户名：#{username}
+    //        .row 性别：#{sex === 1 ? '男' : (sex === 0 ? '女' : '保密')}
+    //        .row 年龄：#{age}
+    //        .row 电话：#{tel}
+    //        .row email：#{email}
+    #content.chat-win
+        #room.room-title
+            span#username #{username}
+            input(type='hidden' id='sex' value=sex)
+            a#logout-a.fr.logout-ico(href='javascript:void(0);' title='退出')
+            a#setting-a.fr.setting-ico(href='javascript:void(0);' title='设置')
+        .main-content
+            .room-area
+                div 在线用户
+                    span.online-num
+                ul#user-list
+            #messagees.message-area
+            #tool.tool-bar
+                span.emoji-ico
+                span.img-ico
+                #emoji-content.emoji-arae
+                input(type='file' id='btn-send-img' multiple='multiple' style='display:none')
+        .send-area
+            .input-area
+                #send-message(contenteditable='true' placeholder='说点什么吧')
+            .actions-area
+                button#send-button.send-btn 发送
+    #img-modal.img-modal
+        span#close-imgbox(onclick='closeImgBox()')
+        #img-box.img-box
+            .inline
+                img#big-img
+
+    script(src='/socket.io/socket.io.js')
+    script(src='/lib/jquery/jquery-3.3.1.js')
+    script(src='/javascripts/client.js')

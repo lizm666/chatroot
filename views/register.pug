@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    .container
+        #register-box.register-box(style={width:'400px'})
+            .row
+                .title 用户注册
+            .row
+                input(name='username' id='reg-username' placeholder='用户名' requiredText='用户名不能为空')
+
+            .row
+                input(type='password' id='reg-password' name='password' placeholder='密码' requiredText='密码不能为空')
+            .row
+                input(type='password' id='reg-password-2' name='password2' placeholder='密码确认' requiredText='密码确认不能为空')
+            .row
+                select(name='gender' requiredText='性别不能为空')
+                    option(value='' disabled selected) 性别
+                    option(value=2) 保密
+                    option(value=1) 男
+                    option(value=0) 女
+            .row
+                input(placeholder='邮件（用于找回密码）' name='email' requiredText='邮件不能为空')
+            .row
+                input(placeholder='安全问题（用于找回密码）' name='question' requiredText='安全问题不能为空')
+            .row
+                input(placeholder='问题答案' name='answer' requiredText='答案不能为空')
+
+            .row
+                button#register-btn.register.pug-btn 注册
+            .row.txt-c(style={'margin-bottom': '0'})
+                a.mgr-40(href='/etb-chat/login') 已有账号，直接登录
+                a(href='/etb-chat/findPwd') 忘记密码

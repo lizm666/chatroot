@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>电税聊天室</title>
+    <link rel="icon" sizes="32x32" type="image/png" href="/images/favicon.png">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <link rel="stylesheet" href="/stylesheets/setting.css">
+    <div class="setting-main">
+      <div class="setting-menu">
+        <ul>
+          <li class="active" data-tab="change-pwd-tab">修改密码</li>
+          <li data-tab="base-tab">基础设置</li>
+          <li data-tab="person-tab">个人设置</li>
+        </ul>
+      </div>
+      <div class="setting-content">
+        <div class="li-tab active" id="change-pwd-tab">
+          <div class="tab-box">
+            <table>
+              <tr>
+                <td>原密码：</td>
+                <td>
+                  <input type="password" id="origin-pwd" name="origin-pwd" placeholder="原密码" requiredText="原密码不能为空">
+                </td>
+              </tr>
+              <tr>
+                <td>新密码：</td>
+                <td>
+                  <input type="password" id="new-pwd" name="new-pwd" placeholder="新密码" requiredText="新密码不能为空">
+                </td>
+              </tr>
+              <tr>
+                <td>新密码确认：</td>
+                <td>
+                  <input type="password" id="new-pwd-confirm" name="new-pwd-confirm" placeholder="新密码确认" requiredText="新密码确认不能为空">
+                </td>
+              </tr>
+              <tr>
+                <td class="txt-c" colspan="2">
+                  <button class="blue change-pwd-btn" id="change-pwd-btn">修改</button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="li-tab" id="base-tab">基础设置</div>
+        <div class="li-tab" id="person-tab">个人设置</div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/lib/jquery/jquery-3.3.1.js"></script>
+    <script src="/javascripts/settings.js"></script>
+  </body>
+  <script src="/lib/jquery/jquery-3.3.1.js"></script>
+  <script src="/lib/layer/layer.js"></script>
+  <script src="/javascripts/util.js"></script>
+  <script src="/javascripts/users.js"></script>
+</html>

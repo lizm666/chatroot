@@ -1,0 +1,31 @@
+.setting-main .setting-menu ul {
+  overflow: hidden;
+  width: 810px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0;
+  margin: 15px; }
+  .setting-main .setting-menu ul li {
+    list-style: none;
+    float: left;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer; }
+    .setting-main .setting-menu ul li.active {
+      color: #0077FF; }
+.setting-main .setting-content .li-tab {
+  display: none;
+  width: 810px;
+  min-height: 460px;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: -14px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #fff; }
+  .setting-main .setting-content .li-tab.active {
+    display: block; }
+  .setting-main .setting-content .li-tab .tab-box table tr td {
+    padding: 6px 0; }
+    .setting-main .setting-content .li-tab .tab-box table tr td .change-pwd-btn {
+      width: 106px; }
+
+/*# sourceMappingURL=setting.css.map */

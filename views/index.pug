@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  //h1= title
+  //p Welcome to #{title}
+  .container
+    #login-box.login-box
+      .row
+        .title 电税聊天室
+      .row
+        input(name='username' placeholder='用户名')
+      .row
+        input(type='password' name='password' placeholder='密码')
+      .row
+        button#login-btn.login-btn 登录
+      .row.txt-c(style={'margin-bottom':'0'})
+        a.mgr-40(href='/findPwd') 忘记密码
+        a(href='/register') 注册
+    .footer
+      span Author:lizm

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>电税聊天室</title>
+    <link rel="icon" sizes="32x32" type="image/png" href="/images/favicon.png">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="find-pwd-box" id="find-pwd-box" style="width:400px;">
+        <div class="row">
+          <div class="title">找回密码</div>
+        </div>
+        <div class="row">
+          <input id="username" name="username" placeholder="用户名" requiredText="用户名不能为空">
+        </div>
+        <div class="row">
+          <input id="email" name="email" placeholder="注册邮箱" requiredText="注册邮箱不能为空">
+        </div>
+        <div class="row">
+          <input id="question" name="question" placeholder="安全问题" disabled requiredText="安全问题不能为空">
+        </div>
+        <div class="row">
+          <input placeholder="问题答案" name="answer" requiredText="问题答案不能为空">
+        </div>
+        <div class="row">
+          <button class="find-pwd pug-btn" id="find-pwd-btn">找回</button>
+        </div>
+        <div class="row txt-c" style="margin-bottom:0;"><a class="mgr-40" href="/etb-chat/login">已有账号，直接登录</a><a href="/etb-chat/register">注册</a></div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/lib/jquery/jquery-3.3.1.js"></script>
+    <script src="/javascripts/findPwd.js"></script>
+  </body>
+  <script src="/lib/jquery/jquery-3.3.1.js"></script>
+  <script src="/lib/layer/layer.js"></script>
+  <script src="/javascripts/util.js"></script>
+  <script src="/javascripts/users.js"></script>
+</html>

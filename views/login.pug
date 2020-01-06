@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    //h1= title
+    //p Welcome to #{title}
+    .container
+        #login-box.login-box
+            .row
+                .title 电税聊天室
+            .row(style={'margin-bottom':'25px'})
+                input(id='username' name='username' placeholder='用户名' requiredText='用户名不能为空')
+            .row(style={'margin-bottom':'25px'})
+                input(id='password' name='password' placeholder='密码' type='password' requiredText='密码不能为空')
+            .row(style={'margin-bottom':'35px'})
+                button#login-btn.login-btn 登录
+            .row.txt-c(style={'margin-bottom':'0'})
+                a.mgr-40(href='/etb-chat/findPwd') 忘记密码
+                a(href='/etb-chat/register') 注册
+        .footer
+            span Author：lizm

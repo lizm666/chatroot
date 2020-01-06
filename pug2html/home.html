@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>电税聊天室</title>
+    <link rel="icon" sizes="32x32" type="image/png" href="/images/favicon.png">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <link rel="stylesheet" href="/stylesheets/chatroom.css">
+    <!--.home-content-->
+    <!--    .msg 欢迎！-->
+    <!--        span#username #{username}-->
+    <!--        input(type='hidden' id='sex' value=sex)-->
+    <!--        a.mgr-40.mgl-40(href='/users/logout.do') 退出-->
+    <!--        a(href='/users/delete.do') 注销账号-->
+    <!--    .user-info-box-->
+    <!--        .row 用户名：#{username}-->
+    <!--        .row 性别：#{sex === 1 ? '男' : (sex === 0 ? '女' : '保密')}-->
+    <!--        .row 年龄：#{age}-->
+    <!--        .row 电话：#{tel}-->
+    <!--        .row email：#{email}-->
+    <div class="chat-win" id="content">
+      <div class="room-title" id="room"><span id="username"></span>
+        <input type="hidden" id="sex"><a class="fr logout-ico" id="logout-a" href="javascript:void(0);" title="退出"></a><a class="fr setting-ico" id="setting-a" href="javascript:void(0);" title="设置"></a>
+      </div>
+      <div class="main-content">
+        <div class="room-area">
+          <div>在线用户<span class="online-num"></span></div>
+          <ul id="user-list"></ul>
+        </div>
+        <div class="message-area" id="messagees"></div>
+        <div class="tool-bar" id="tool"><span class="emoji-ico"></span><span class="img-ico"></span>
+          <div class="emoji-arae" id="emoji-content"></div>
+          <input type="file" id="btn-send-img" multiple="multiple" style="display:none">
+        </div>
+      </div>
+      <div class="send-area">
+        <div class="input-area">
+          <div id="send-message" contenteditable="true" placeholder="说点什么吧"></div>
+        </div>
+        <div class="actions-area">
+          <button class="send-btn" id="send-button">发送</button>
+        </div>
+      </div>
+    </div>
+    <div class="img-modal" id="img-modal"><span id="close-imgbox" onclick="closeImgBox()"></span>
+      <div class="img-box" id="img-box">
+        <div class="inline"><img id="big-img"></div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/lib/jquery/jquery-3.3.1.js"></script>
+    <script src="/javascripts/client.js"></script>
+  </body>
+  <script src="/lib/jquery/jquery-3.3.1.js"></script>
+  <script src="/lib/layer/layer.js"></script>
+  <script src="/javascripts/util.js"></script>
+  <script src="/javascripts/users.js"></script>
+</html>

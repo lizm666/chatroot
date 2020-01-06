@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    .container
+        #find-pwd-box.find-pwd-box(style={width:'400px'})
+            .row
+                .title 找回密码
+            .row
+                input(id='username' name='username' placeholder='用户名' requiredText='用户名不能为空')
+            .row
+                input(id='email' name='email' placeholder='注册邮箱' requiredText='注册邮箱不能为空')
+            .row
+                input(id='question' name='question' placeholder='安全问题' disabled requiredText='安全问题不能为空')
+            .row
+                input(placeholder='问题答案' name='answer' requiredText='问题答案不能为空')
+            .row
+                button#find-pwd-btn.find-pwd.pug-btn 找回
+            .row.txt-c(style={'margin-bottom': '0'})
+                a.mgr-40(href='/etb-chat/login') 已有账号，直接登录
+                a(href='/etb-chat/register') 注册
+
+    script(src='/socket.io/socket.io.js')
+    script(src='/lib/jquery/jquery-3.3.1.js')
+    script(src='/javascripts/findPwd.js')

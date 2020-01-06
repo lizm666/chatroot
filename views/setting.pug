@@ -1,0 +1,40 @@
+extends layout
+
+block content
+    link(rel='stylesheet', href='/stylesheets/setting.css')
+    .setting-main
+        .setting-menu
+            ul
+                li.active(data-tab='change-pwd-tab') 修改密码
+                li(data-tab='base-tab') 基础设置
+                li(data-tab='person-tab') 个人设置
+
+        .setting-content
+            .li-tab.active#change-pwd-tab
+                .tab-box
+                    table
+                        tr
+                            td 原密码：
+                            td
+                                input(type='password' id='origin-pwd' name='origin-pwd' placeholder='原密码' requiredText='原密码不能为空')
+                        tr
+                            td 新密码：
+                            td
+                                input(type='password' id='new-pwd' name='new-pwd' placeholder='新密码' requiredText='新密码不能为空')
+                        tr
+                            td 新密码确认：
+                            td
+                                input(type='password' id='new-pwd-confirm' name='new-pwd-confirm' placeholder='新密码确认' requiredText='新密码确认不能为空')
+                        tr
+                            td.txt-c(colspan='2')
+                                button#change-pwd-btn.blue.change-pwd-btn 修改
+
+
+            .li-tab#base-tab 基础设置
+
+            .li-tab#person-tab 个人设置
+
+
+    script(src='/socket.io/socket.io.js')
+    script(src='/lib/jquery/jquery-3.3.1.js')
+    script(src='/javascripts/settings.js')

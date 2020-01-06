@@ -1,0 +1,506 @@
+@charset "UTF-8";
+
+body {
+  font-family: "Microsoft YaHei UI";
+}
+
+a {
+  color: #00b7ff;
+}
+input[type="checkbox"] {
+  margin: 0;
+}
+.select-sex{
+  margin: -5px 0 10px 5px;
+}
+#user-list{
+  padding: 0;
+}
+#user-list li{
+  list-style: none;
+  margin: 5px 0;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+#user-list li:hover{
+  background-color: #ddd;
+}
+.sex_0{
+  background: url("../images/ico-sex-girl.png") center right 10px no-repeat;
+}
+.sex_1{
+  background: url("../images/ico-sex-boy.png") center right 10px no-repeat;
+}
+.sex_2{
+  background: url("../images/ico-sex-unknown.png") center right 10px no-repeat;
+}
+.select-sex span{
+  margin: -1px 10px 5px 5px;
+  display: inline-block;
+  vertical-align: top;
+}
+.chat-win {
+  display: none;
+  width: 800px;
+  margin: 30px auto;
+  background: #efefef;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 580px;
+  box-shadow: 1px 1px 10px 0 #000;
+  .room-title {
+    padding: 10px 20px;
+    background: #ddd;
+    border-bottom: 1px #aaa solid;
+    height: 40px;
+    box-sizing: border-box;
+    .logout-ico{
+      display: inline-block;
+      background: url("../images/sys/ico-logout.png") center center no-repeat;
+      background-size: 100%;
+      width: 20px;
+      height: 20px;
+      &:hover{
+        background: url("../images/sys/ico-logout-h.png") center center no-repeat;
+        background-size: 100%;
+      }
+    }
+    .setting-ico{
+      display: inline-block;
+      background: url("../images/sys/ico-setting.png") center center no-repeat;
+      background-size: 100%;
+      width: 22px;
+      height: 22px;
+      margin-right: 20px;
+      &:hover{
+        background: url("../images/sys/ico-setting-h.png") center center no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+}
+
+
+.close-ico{
+  background: url("../images/ico-alert-close.png") top center no-repeat;
+  width: 12px;
+  height: 12px;
+  margin-top: 5px;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+}
+.online-num{
+  width: 18px;
+  height: 18px;
+  border-radius: 18px;
+  line-height: 18px;
+  display: inline-block;
+  margin-left: 5px;
+  background: #4acaff;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+}
+.main-content {
+  height: 440px;
+  border-bottom: 1px #aaa solid;
+}
+
+.message-area {
+  width: 580px;
+  height: 370px;
+  padding: 15px;
+  overflow: auto;
+  background: #fff;
+  font-size: 14px;
+}
+.message-area i{
+  font-style: normal;
+}
+.message-area img{
+  max-width: 100px;
+  cursor: pointer;
+}
+.tool-bar{
+  position: relative;
+  width: 610px;
+  padding-top: 4px;
+  border-top: 1px solid #ddd;
+}
+.emoji-arae{
+  display: none;
+  position: absolute;
+  width: 584px;
+  top: -125px;
+  border: 1px #ddd solid;
+  padding: 10px;
+  left: 2px;
+  height: 100px;
+  overflow-y: auto;
+  background-color: #eee;
+}
+.emoji-arae img{
+  cursor: pointer;
+}
+.my-message{
+  text-align: right;
+  position: relative;
+  margin: 25px 0;
+}
+.others-message{
+  margin: 10px 0;
+}
+.msg-box{
+  display: inline-block;
+  vertical-align: top;
+  word-wrap: break-word;
+  padding: 12px;
+  max-width: 450px;
+}
+.log{
+  color: #aaa;
+  margin: 5px 0;
+}
+.others-msg{
+  background: #06BD50;
+  border-radius: 5px 5px 5px 0;
+  vertical-align: bottom;
+}
+.my-msg{
+  background: #eee;
+  border-radius: 5px 5px 0 5px;
+  vertical-align: bottom;
+}
+.others-nick-name{
+  color: #aaa;
+  font-size: 12px;
+  width: 100px;
+  text-align: left;
+  margin-left: 8px;
+}
+.my-nick-name{
+  color: #aaa;
+  width: 100px;
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  margin-right: 8px;
+}
+/*消息框中的头像显示*/
+.avatar{
+  display: inline-block;
+  width: 50px;
+  height: 42px;
+  vertical-align: bottom;
+}
+
+.my-avatar_0{
+  background: url("../images/ico-avatar-woman.png") top right no-repeat, url("../images/ico-msgSelf-arrow.png") bottom left no-repeat;
+}
+.my-avatar_1{
+  background: url("../images/ico-avatar-man.png") top right no-repeat, url("../images/ico-msgSelf-arrow.png") bottom left no-repeat;
+}
+.my-avatar_2{
+  background: url("../images/ico-avatar-unknown.png") top right no-repeat, url("../images/ico-msgSelf-arrow.png") bottom left no-repeat;
+}
+.others-avatar_0{
+  background: url("../images/ico-avatar-woman.png") top left no-repeat, url("../images/ico-msgOthers-arrow.png") bottom right no-repeat;
+}
+.others-avatar_1{
+  background: url("../images/ico-avatar-man.png") top left no-repeat, url("../images/ico-msgOthers-arrow.png") bottom right no-repeat;
+}
+.others-avatar_2{
+  background: url("../images/ico-avatar-unknown.png") top left no-repeat, url("../images/ico-msgOthers-arrow.png") bottom right no-repeat;
+}
+
+.typing .others-avatar_0{
+  background: url("../images/ico-avatar-woman.png") top left no-repeat;
+}
+.typing .others-avatar_1{
+  background: url("../images/ico-avatar-man.png") top left no-repeat;
+}
+.typing .others-avatar_2{
+  background: url("../images/ico-avatar-unknown.png") top left no-repeat;
+}
+.typing .others-msg{
+  background: none;
+  color: #aaa;
+}
+
+
+
+
+.room-area {
+  float: right;
+  width: 159px;
+  height: 410px;
+  padding: 15px;
+  overflow: auto;
+  border-left: 1px #aaa solid;
+}
+.room-item{
+  background: url("../images/ico-arrow-down.png") top right no-repeat;
+  cursor: pointer;
+}
+.room-item:hover,
+.room-item.open:hover{
+  background-color: #ddd;
+}
+.room-item.open{
+  background: url("../images/ico-arrow-up.png") top right no-repeat;
+}
+.room-name{
+  margin-bottom: 10px;
+}
+.room-name ul{
+  margin: 5px 0;
+  padding: 0;
+  list-style: none;
+}
+.room-name ul li{
+  padding-left: 10px;
+  cursor: pointer;
+}
+.room-name ul li:hover{
+  background: #ddd;
+}
+
+.room-area::-webkit-scrollbar ,
+.message-area::-webkit-scrollbar ,
+.actions-area::-webkit-scrollbar ,
+.emoji-arae::-webkit-scrollbar ,
+.input-area #send-message::-webkit-scrollbar {
+  margin-left: -5px;
+  width: 7px;
+  height: 7px;
+}
+
+.room-area::-webkit-scrollbar-track ,
+.message-area::-webkit-scrollbar-track ,
+.actions-area::-webkit-scrollbar-track ,
+.emoji-arae::-webkit-scrollbar-track ,
+.input-area #send-message::-webkit-scrollbar-track {
+  background-color: #ddd;
+  border-radius: 3px;
+}
+
+.room-area::-webkit-scrollbar-thumb ,
+.message-area::-webkit-scrollbar-thumb ,
+.actions-area::-webkit-scrollbar-thumb ,
+.emoji-arae::-webkit-scrollbar-thumb ,
+.input-area #send-message::-webkit-scrollbar-thumb {
+  background-color: #aaaaaa;
+  border-radius: 3px;
+}
+
+.input-area{
+  width: 610px;
+  height: 98px;
+  overflow: hidden;
+  border-right: 1px #aaa solid;
+  background: #eee;
+}
+.input-area #send-message{
+  padding: 5px;
+  border: none;
+  width: 600px;
+  height: 88px;
+  resize: none;
+  background-color: #fff;
+}
+.input-area #send-message img{
+  max-width: 100px;
+  cursor: pointer;
+}
+.input-area #send-message:focus{
+  outline: none;
+}
+.actions-area{
+  float: right;
+  width: 159px;
+  height: 70px;
+  padding: 15px;
+  overflow: auto;
+  margin-top: -100px;
+}
+.emoji-ico{
+  background: url("../images/ico-smile-face.png") top center no-repeat;
+  display: inline-block;
+  width: 34px;
+  height: 32px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.emoji-ico.open,
+.emoji-ico:hover{
+  background: url("../images/ico-smile-face1.png") top center no-repeat;
+}
+.img-ico{
+  background: url("../images/ico-img.png") center center no-repeat;
+  display: inline-block;
+  width: 34px;
+  height: 32px;
+  cursor: pointer;
+}
+.img-ico:hover{
+  background: url("../images/ico-img1.png") center center no-repeat;
+}
+.send-btn{
+  border: none;
+  background: #69BCF7;
+  color: #fff;
+  width: 159px;
+  height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.send-btn:focus{
+  outline: none;
+}
+.send-btn:hover{
+  background: #62a7de;
+}
+.tips{
+  font-size: 12px;
+  margin-top: 5px;
+}
+.mini-fixed {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.mini-mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000000;
+}
+
+.mini-mask-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .3;
+  -moz-opacity: .3;
+  filter: alpha(opacity=30);
+}
+
+.mini-mask-msg {
+  position: relative;
+  width: 280px;
+  margin: 150px auto;
+  color: #222;
+  font-family: tahoma,arial,verdana,sans-serif;
+  font-size: 12px;
+}
+.nick-name{
+  background: #000;
+  overflow: hidden;
+  border-radius: 5px;
+  padding: 20px;
+  color: #fff;
+  font-family: "Microsoft YaHei UI";
+}
+.nick-name-title{
+  padding-bottom: 15px;
+  border-bottom: 1px #fff solid;
+}
+.nick-name-input{
+  margin: 25px 0;
+  width: 100%;
+  border: none;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 5px;
+  text-indent: 8px;
+}
+.nick-name-input:focus{
+  outline: none;
+}
+.nick-name-ok{
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 32px;
+  line-height: 32px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.nick-name-ok:hover{
+  background: #b1c8dd;
+}
+.nick-name-ok:focus{
+  outline: none;
+}
+
+.img-modal{
+  display: none;
+  position: fixed;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0,0,0,0.7);
+}
+.img-modal #close-imgbox{
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url("../images/ico-close-cycle.png") center center no-repeat;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+.img-modal #close-imgbox:hover{
+  background: url("../images/ico-close-blue.png") center center no-repeat;;
+}
+.img-modal img{
+  display: block;
+  max-height: 550px;
+  margin: 0 auto;
+  position: relative;
+}
+.img-modal .img-box{
+  text-align: center;
+}
+.img-box .inline{
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 15px;
+}
+.img-box span{
+  width: 48px;
+  height: 48px;
+  display: block;
+  opacity: 0.6;
+}
+
+.img-box span:hover{
+  cursor: pointer;
+  opacity: 1;
+}
+
+@media screen and (max-width: 1920px) {
+  .chat-win{
+    margin: 150px auto;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .chat-win{
+    margin: 28px auto;
+  }
+}
