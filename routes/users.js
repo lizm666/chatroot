@@ -113,6 +113,13 @@ router.post('/register.do', function (req, res, next) {
         data.question,
         data.answer
     ];
+    if(data.username.length > 16){
+        res.send(resultDto({
+            success: false,
+            message: '用户名长度不能超过16个字符'
+        }));
+        return;
+    }
     //var querySQL = 'select * from users t where t.username=?';
     db.commit(SQL.checkUsername, [data.username], function (err, result) {
         //console.log(result);

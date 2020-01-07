@@ -17,7 +17,9 @@ const SQL = {
     /*找回密码之前的安全问题查询*/
     querySecurityQuestion: 'select * from users t where t.username=? and t.email=?',
     /*找回密码*/
-    findPasswordBack: 'select * from users t where t.username=? and t.email=? and t.question=? and t.answer=?'
+    findPasswordBack: 'select * from users t where t.username=? and t.email=? and t.question=? and t.answer=?',
+    
+    collectRecord: 'insert into chat_records (uuid, username, ipv4, content, sendingTime, socketId) values (?,?,?,?,now(),?)'
     
 };
 

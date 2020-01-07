@@ -64,11 +64,13 @@ $(function () {
          });
          }*/
         userName = $('span#username').text().trim();
-        userSex = $('input#sex').val();
+        userSex = $('input#gender').val();
+        var uuid = $('input#uuid').val();
         $chatWin.show();
         socket.emit('join', {
             name: userName,
-            sex: userSex
+            sex: userSex,
+            uuid: uuid
         });
     }
     
@@ -155,14 +157,15 @@ $(function () {
     
     // 删除正在输入...
     function removeIsTyping(data) {
-        var getTypingMessages = function (data) {
+        /*var getTypingMessages = function (data) {
             return $('.others-message.typing').filter(function (i) {
                 return $(this).children('.others-nick-name').text() === data.username;
             });
         };
         getTypingMessages(data).fadeOut(10, function () {
             $(this).remove();
-        });
+        });*/
+        $userListArea.find('#' + data.socketId).removeClass('typing');
     }
     
     // 是否在输入
@@ -173,7 +176,9 @@ $(function () {
         }
         data.message = '正在输入...';
         if (type) {
-            acceptMessage(data, 'typing');
+            //acceptMessage(data, 'typing');
+            var tarUser = $userListArea.find('#' + data.socketId);
+            !tarUser.hasClass('typing') && tarUser.addClass('typing');
         } else {
             removeIsTyping(data);
         }

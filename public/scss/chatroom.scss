@@ -22,6 +22,41 @@ input[type="checkbox"] {
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 5px;
+  position: relative;
+  &.typing{
+    &:after{
+      content: '';
+      background: url(../images/sys/edit.png) center right no-repeat;
+      width: 30px;
+      height: 16px;
+      display: inline-block;
+      position: absolute;
+      text-align: right;
+      padding-right: 18px;
+      box-sizing: border-box;
+      right: 30px;
+      animation: editing 1.5s linear 0.5s infinite normal;
+    }
+  }
+}
+
+@keyframes editing {
+  0% {
+    content: '';
+    right: 40px;
+  }
+  33.3% {
+    content: '.';
+    right: 36.6px;
+  }
+  66.6% {
+    content: '..';
+    right: 33.3px;
+  }
+  100% {
+    content: '...';
+    right: 30px;
+  }
 }
 #user-list li:hover{
   background-color: #ddd;

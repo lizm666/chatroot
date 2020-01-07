@@ -1,4 +1,6 @@
-
+var db = require('../DAO/db');
+var SQL = require('../DAO/sql');
+var moment = require('moment');
 
 var userCount = 0;
 var clientNum = 0;
@@ -17,6 +19,16 @@ function log(msg) {
     console.log(time+msg);
 }
 
+function collectInDB(values){
+    db.commit(SQL.collectRecord, values, function (err, result) {
+        //console.log(result);
+        // 发送大图会报错，先不管了
+        if (err) {
+            log(err.message);
+        }
+    });
+}
+
 exports.onConnection = function(io){
     io.on('connection',function (socket) {
         clientNum++;
@@ -32,6 +44,7 @@ exports.onConnection = function(io){
             }
             socket.username = user.name;
             socket.usersex = user.sex;
+            socket.uuid = user.uuid;
             userCount++;
             addedUser = true;
             usersInRoom[socket.id] = user; // 用户信息与socket id 绑定
@@ -51,7 +64,7 @@ exports.onConnection = function(io){
                 userCount: userCount,
                 usersInRoom:usersInRoom
             });
-
+            collectInDB([socket.uuid, socket.username, clientIp, '加入聊天室', socket.id]);
             log('IP为 < ' + clientIp + ' > 的用户加入了房间，昵称为：' + user.name + ' ，当前房间人数为 < ' + userCount + ' >');
 
         });
@@ -64,6 +77,7 @@ exports.onConnection = function(io){
                 usersex: socket.usersex,
                 message: data
             });
+            collectInDB([socket.uuid, socket.username, clientIp, data, socket.id]);
         });
 
         // 处理客户端发过来的 change name 事件通知
@@ -101,7 +115,8 @@ exports.onConnection = function(io){
         socket.on('typing', function () {
             socket.broadcast.emit('typing', {
                 username: socket.username,
-                usersex: socket.usersex
+                usersex: socket.usersex,
+                socketId: socket.id
             });
         });
 
@@ -109,7 +124,8 @@ exports.onConnection = function(io){
         socket.on('stop typing', function () {
             socket.broadcast.emit('stop typing', {
                 username: socket.username,
-                usersex: socket.usersex
+                usersex: socket.usersex,
+                socketId: socket.id
             });
         });
     });
